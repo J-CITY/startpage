@@ -1,0 +1,160 @@
+/* -------------------------------------------------------------------
+  RESETS
+---------------------------------------------------------------------- */
+
+html,
+body,
+h3 {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+/* -------------------------------------------------------------------
+  BASE background: filter(url("img/wallpaper5.jpg"), blur(5px));
+---------------------------------------------------------------------- */
+
+body {
+  background-color: #002b36;
+  background-size: cover;
+  color: #657b83;
+  font-family: "Inconsolata", monospace;
+  font-size: 15px;
+}
+
+
+#note-pad {
+  height: 100%;
+}
+#note {
+ color: #2aa198;
+ font-family:  Segoe UI Light;
+ font-size: 1em;
+}
+
+
+h3 {
+  display: inline;
+  padding-bottom: 5px;
+  font-size: 1em;
+}
+
+a, a:visited {
+  display: block;
+  padding-top: 2px;
+  color: #2aa198;
+  font-weight: bold;
+  text-decoration: none;
+}
+a:hover { color: #dc322f; }
+
+.selector {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 2px solid #073642;
+  color: #859900;
+  background: transparent;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 1px 1px;
+  width: 70px;
+  background: #073642;
+}
+
+/* -------------------------------------------------------------------
+  COLOURS
+---------------------------------------------------------------------- */
+
+.blue     { color: #268bd2; }
+.cyan     { color: #2aa198; }
+.green    { color: #859900; }
+.magenta  { color: #d33682; }
+.orange   { color: #cb4b16; }
+.red      { color: #dc322f; }
+.violet   { color: #6c71c4; }
+.yellow   { color: #b58900; }
+
+/* -------------------------------------------------------------------
+  LAYOUT
+---------------------------------------------------------------------- */
+
+#container {
+  position: absolute;
+  top: 10%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 700px;
+  height: auto;
+}
+
+#searchbox {
+  margin: 4px;
+  padding: 8px;
+  background-color: #073642;
+  border: 5px solid #073642;
+  -webkit-box-shadow: 1px 1px 10px 0px #000;
+     -moz-box-shadow: 1px 1px 10px 0px #000;
+          box-shadow: 1px 1px 10px 0px #000;
+}
+
+#links {
+  display: -moz-box;
+  display: -webkit-box;
+  width: 100%;
+}
+
+.box {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  margin: 4px;
+  padding: 8px;
+  background-color: #073642;
+  border: 5px solid #073642;
+  -webkit-box-shadow: 1px 1px 10px 0px #000;
+     -moz-box-shadow: 1px 1px 10px 0px #000;
+          box-shadow: 1px 1px 10px 0px #000;
+}
+
+.SE {
+	font-family: Segoe UI Light;
+}
+
+.clock {
+  background-color: #073642;
+  border: 5px solid #073642;
+  color: #859900;
+	font-family: Segoe UI Light;
+	font-size: 96px;
+  text-align: center;
+}
+
+.weather {
+  width:90%;
+  margin-left: auto;
+  margin-right:auto;
+  -webkit-filter: invert(10%);
+  filter: invert(50%);
+}
+
+/* -------------------------------------------------------------------
+  SEARCH
+---------------------------------------------------------------------- */
+
+form {
+  display: inline;
+}
+
+input 	{
+  display: inline;
+  width: 64%;
+  background: none;
+  border: none;
+  color: #b58900;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+

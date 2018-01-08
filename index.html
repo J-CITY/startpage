@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+    <!-- document metadata -->
+    <meta charset="UTF-8">
+
+    <!-- site metadata -->
+    <title>Home page</title>
+
+    <!-- style -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="shortcut icon" href="img/house.png" type="image/jpg" />
+    <link rel="icon" href="img/house.png" type="image/jpg" />
+
+    <script src="js/time.js"></script>
+    <script src="js/wallpaper.js"></script>
+    <script src="js/note.js"></script>
+    <script type="text/javascript" src="js/search.js"></script>
+  </head>
+
+  <body onload="startTime(); setWallpaper(); getUsernote();" >
+    <div id="container">
+      <div id="links">
+        <div class="box">
+          <div class="clock" id="time" onclick="onClickTime()"></div>
+        </div>
+      </div> <!-- end links -->
+
+      <div id="searchbox">
+        <!-- klaz@internet ~ $ search -->
+        <h3>
+          <span class="blue">J`CITY</span>@<span class="violet">.</span> 
+          <span class="magenta">~</span> <span class="blue">$</span> 
+          <span class="orange">cd</span> ~/
+        </h3>
+        <select class="selector" id="searchEngine">
+            <option>Google </option>
+            <option>DDG    </option>
+            <option>Wiki   </option>
+            <option>Youtube</option>
+          </select>
+        <!-- search -->
+        <input type="text" 
+          id="search" 
+          autocapitalize="off" 
+          autocomplete="off" 
+          autocorrect="off" 
+          autofocus="autofocus" 
+          spellcheck="false" 
+          placeholder="" 
+          onkeypress="return search(event)"></input>
+      </div> <!-- end searchbox -->
+
+      <div id="links">
+        <div class="box">
+          <!-- Weather from weatherwidget.io with inverse filter to make it white -->
+          <div class="weather" id="weather">
+            <a class="weatherwidget-io" 
+              href="https://forecast7.com/en/43d12131d89/vladivostok/" 
+              data-label_1="VLADIVOSTOK" data-label_2="WEATHER"
+              data-font="Roboto" data-icons="Climacons">
+              Weather
+            </a>
+            <script>
+              !function (d, s, id) { 
+                var js, fjs = d.getElementsByTagName(s)[0]; 
+                if (!d.getElementById(id)) { 
+                  js = d.createElement(s); 
+                  js.id = id; js.src = "https://weatherwidget.io/js/widget.min.js"; 
+                  fjs.parentNode.insertBefore(js, fjs); 
+                } 
+              }(document, "script", "weatherwidget-io-js");
+            </script>
+          </div>
+          <!-- /weather -->
+        </div>
+      </div> <!-- end links -->
+
+      <div id="links">
+        <div class="box">
+          <!-- ~ $ cd ~/general -->
+          <h3><span class="magenta">~</span> <span class="blue">$</span> 
+            <span class="orange">cd</span> ~/<span class="green">media</span></h3>
+          <a href="https://www.youtube.com/">youtube</a>
+          <a href="https://www.goodfon.ru/">goodfon</a>
+          <a href="https://www.deviantart.com/">deviantart</a>
+          <a href="https://habrahabr.ru/">habrahabr</a>
+          <a href="http://droider.ru/">droider</a>
+          <a href="https://translate.google.com/?hl=ru#">translate</a>
+          <a href="http://www.wolframalpha.com/">wolframalpha</a>
+        </div>
+
+        <div class="box">
+          <h3><span class="magenta">~</span> <span class="blue">$</span> 
+            <span class="orange">cd</span> ~/<span class="green">films</span></h3>
+          <a href="http://www.lostfilm.tv/">front page</a>
+          <a href="http://new-rutor.org/">rutor</a>
+          <a href="https://rutracker.org/forum/index.php">rutracker</a>
+          <a href="https://thepiratebay.se/">thepiratebay</a>
+          <a href="https://www.kinopoisk.ru/">kinopoisk</a>
+          <a href="http://www.imdb.com/">imdb</a>
+          <a href="https://myshows.me/">myshows</a>
+        </div>
+
+        <div class="box">
+          <h3><span class="magenta">~</span> <span class="blue">$</span> 
+            <span class="orange">cd</span> ~/<span class="green">geek</span></h3>
+          <a href="https://github.com/">github</a>
+          <a href="http://lurkmore.to/">lurkmore</a>
+          <a href="https://www.wikipedia.org/">wikipedia</a>
+          <a href="https://wiki.archlinux.org/">archlinux</a>
+          <a href="http://4pda.ru/forum/index.php?act=idx">4pda</a>
+          <a href="https://chtoes.li/">chtoes</a>
+          <a href="https://xkcd.ru/">xkcd</a>
+          <a href="http://distrowatch.com/">distrowatch</a>
+        </div>
+        <div class="box">
+          <h3><span class="magenta">~</span> <span class="blue">$</span> 
+            <span class="orange">cd</span> ~/<span class="green">4chan</span></h3>
+          <a href="http://boards.4chan.org/wg/catalog">/wg/</a>
+          <a href="http://boards.4chan.org/w/catalog">/w/</a>
+          <a href="http://boards.4chan.org/g/catalog">/g/</a>
+          <a href="http://boards.4chan.org/b/catalog">/b/</a>
+        </div>
+      </div> <!-- end links -->
+
+      <div id="links">
+        <div id="oneout_inner" class="box">
+					<div id="note-pad">
+						<div id="note" contenteditable="true" onkeyup="storeUsernote();"></div>
+					</div>
+					<center>
+						<a class="clear" href='' onclick='clearLocal();'>Clear</a>
+					</center>
+				</div>
+      </div> <!-- end links -->
+
+    </div> <!-- end container -->
+  </body>
+
+</html>
