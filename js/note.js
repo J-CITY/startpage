@@ -13,6 +13,7 @@ function getUsernote() {
 }
 
 function clearLocal() {
-    clear: localStorage.clear();
+    localStorage.removeItem('note');
+    //clear: localStorage.clear();
     return false;
 }

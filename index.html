@@ -18,24 +18,165 @@
     <script src="js/wallpaper.js"></script>
     <script src="js/note.js"></script>
     <script type="text/javascript" src="js/search.js"></script>
+    <script src="js/settings.js"></script>
+    <!-- menu -->
+    <link rel="stylesheet" href="css/menu.css">
+    <script src="js/menu.js"></script>
+    
+    <script src="lib/jscolor.js"></script>
   </head>
 
-  <body onload="startTime(); setWallpaper(); getUsernote();" >
+  <body onload="startTime(); setWallpaper(); getUsernote(); getAllSettings();" class="wallpaper-color">
+
+    <div id="background-image" class="background-image" onclick="setWallpaper()"></div>
+    <div id="change-background-image" class="change-background-image" onclick="setWallpaper()"></div>
+    <!-- menu -->
+    <div id="sidenav" class="sidenav bg-color text-color">
+      <a href="javascript:void(0)" class="closebtn text-color" onclick="closeMenu()">&times;</a>
+
+      <div class="separator title-color">Colors</div>
+
+      <div class="menu-element">
+        <label for="wallpaper-color">wallpaper</label>
+        <input id="wallpaper-color" class="color jscolor {width:101, padding:0, shadow:false,
+          borderWidth:0, backgroundColor:'transparent', insetColor:'#000'}" 
+          value="#ffffff" onchange="setSettings('wallpaper-color')">
+      </div>
+
+      <div class="menu-element">
+        <label for="bg-color">background</label>
+        <input id="bg-color" class="color jscolor {width:101, padding:0, shadow:false,
+          borderWidth:0, backgroundColor:'transparent', insetColor:'#000'}" 
+          value="#ffffff" onchange="setSettings('bg-color')">
+      </div>
+
+      <div class="menu-element">
+        <label for="border-color">border</label>
+        <input id="border-color" class="color jscolor {width:101, padding:0, shadow:false,
+          borderWidth:0, backgroundColor:'transparent', insetColor:'#000'}" 
+          value="#ffffff" onchange="setSettings('border-color')">
+      </div>
+
+      <div class="menu-element">
+        <label for="text-color">text</label>
+        <input id="text-color" class="color jscolor {width:101, padding:0, shadow:false,
+          borderWidth:0, backgroundColor:'transparent', insetColor:'#000'}" 
+          value="#ffffff" onchange="setSettings('text-color')">
+      </div>
+
+      <div class="menu-element">
+        <label for="title-color">title</label>
+        <input id="title-color" class="color jscolor {width:101, padding:0, shadow:false,
+          borderWidth:0, backgroundColor:'transparent', insetColor:'#000'}" 
+          value="#ffffff" onchange="setSettings('title-color')">
+      </div>
+
+      <div class="menu-element">
+        <label for="input-color">input text</label>
+        <input id="input-color" class="color jscolor {width:101, padding:0, shadow:false,
+          borderWidth:0, backgroundColor:'transparent', insetColor:'#000'}" 
+          value="#ffffff" onchange="setSettings('input-color')">
+      </div>
+
+      <div class="menu-element">
+        <label for="focus-text-color">focus text</label>
+        <input id="focus-text-color" class="color jscolor {width:101, padding:0, shadow:false,
+          borderWidth:0, backgroundColor:'transparent', insetColor:'#000'}" 
+          value="#ffffff" onchange="setSettings('focus-text-color')">
+      </div>
+
+      <div class="menu-element">
+        <label for="name-color">name</label>
+        <input id="name-color" class="color jscolor {width:101, padding:0, shadow:false,
+          borderWidth:0, backgroundColor:'transparent', insetColor:'#000'}" 
+          value="#ffffff" onchange="setSettings('name-color')">
+      </div>
+      <div class="menu-element">
+        <label for="at-color">@</label>
+        <input id="at-color" class="color jscolor {width:101, padding:0, shadow:false,
+          borderWidth:0, backgroundColor:'transparent', insetColor:'#000'}" 
+          value="#ffffff" onchange="setSettings('at-color')">
+      </div>
+      <div class="menu-element">
+        <label for="tilde-color">~</label>
+        <input id="tilde-color" class="color jscolor {width:101, padding:0, shadow:false,
+          borderWidth:0, backgroundColor:'transparent', insetColor:'#000'}" 
+          value="#ffffff" onchange="setSettings('tilde-color')">
+      </div>
+      <div class="menu-element">
+        <label for="dollar-color">$</label>
+        <input id="dollar-color" class="color jscolor {width:101, padding:0, shadow:false,
+          borderWidth:0, backgroundColor:'transparent', insetColor:'#000'}" 
+          value="#ffffff" onchange="setSettings('dollar-color')">
+      </div>
+      <div class="menu-element">
+        <label for="cd-color">cd</label>
+        <input id="cd-color" class="color jscolor {width:101, padding:0, shadow:false,
+          borderWidth:0, backgroundColor:'transparent', insetColor:'#000'}" 
+          value="#ffffff" onchange="setSettings('cd-color')">
+      </div>
+      <div class="menu-element">
+        <label for="tildeslash-color">~/</label>
+        <input id="tildeslash-color" class="color jscolor {width:101, padding:0, shadow:false,
+          borderWidth:0, backgroundColor:'transparent', insetColor:'#000'}" 
+          value="#ffffff" onchange="setSettings('tildeslash-color')">
+      </div>
+
+      <div class="separator title-color">Other</div>
+
+      <div class="menu-element">
+        <label for="text-color">blur</label>
+        <label class="switch">
+          <input id="blurcb" type="checkbox" checked onclick="setSettings('blurcb')">
+          <span class="slider"></span>
+        </label> 
+      </div>
+
+      <div class="menu-element">
+        <label for="text-color">wallpaper</label>
+        <label class="switch">
+          <input id="wallpapercb" type="checkbox" checked onclick="setSettings('wallpapercb')">
+          <span class="slider"></span>
+        </label> 
+      </div>
+
+      <div class="menu-element">
+        <label for="text-color">seconds</label>
+        <label class="switch">
+          <input id="secondscb" type="checkbox" onclick="setSettings('secondscb'); startTime();">
+          <span class="slider"></span>
+        </label> 
+      </div>
+
+      <div class="menu-element">
+        <label for="text-color">name</label>
+        <input class="inputname" id="nametext" type="text" placeholder="name..." onkeypress="updateName(event);">
+      </div>
+
+      <div class="separator title-color">Default</div>
+      <a class="separator text-color" href="#" onclick="clearSettings()">Clear</a>
+    </div>
+    
+    <span id="menubtn" class="menu text-color" onclick="openMenu()"> &#9776; </span>
+    <!-- end menu -->
+
     <div id="container">
       <div id="links">
-        <div class="box">
-          <div class="clock" id="time" onclick="onClickTime()"></div>
+        <div class="box bg-color border-color">
+          <div class="clock title-color bg-color" id="time" onclick="onClickTime();"></div>
         </div>
       </div> <!-- end links -->
 
-      <div id="searchbox">
-        <!-- klaz@internet ~ $ search -->
+      <div class="bg-color border-color" id="searchbox">
         <h3>
-          <span class="blue">J`CITY</span>@<span class="violet">.</span> 
-          <span class="magenta">~</span> <span class="blue">$</span> 
-          <span class="orange">cd</span> ~/
+          <span id="namespan" class="name-color">J`CITY</span>
+          <span class="at-color">@</span> 
+          <span class="tilde-color">~</span> 
+          <span class="dollar-color">$</span> 
+          <span class="cd-color">cd</span>
+          <span class="tildeslash-color">~/</span>
         </h3>
-        <select class="selector" id="searchEngine">
+        <select class="selector bg-color title-color" id="searchEngine">
             <option>Google </option>
             <option>DDG    </option>
             <option>Wiki   </option>
@@ -44,6 +185,7 @@
         <!-- search -->
         <input type="text" 
           id="search" 
+          class="input-color"
           autocapitalize="off" 
           autocomplete="off" 
           autocorrect="off" 
@@ -54,13 +196,14 @@
       </div> <!-- end searchbox -->
 
       <div id="links">
-        <div class="box">
+        <div class="box bg-color border-color">
           <!-- Weather from weatherwidget.io with inverse filter to make it white -->
           <div class="weather" id="weather">
-            <a class="weatherwidget-io" 
+            <a id="weatherwidget" class="weatherwidget-io" 
               href="https://forecast7.com/en/43d12131d89/vladivostok/" 
               data-label_1="VLADIVOSTOK" data-label_2="WEATHER"
-              data-font="Roboto" data-icons="Climacons">
+              data-font="Roboto" data-icons="Climacons"
+              data-textColor="#859900">
               Weather
             </a>
             <script>
@@ -68,7 +211,8 @@
                 var js, fjs = d.getElementsByTagName(s)[0]; 
                 if (!d.getElementById(id)) { 
                   js = d.createElement(s); 
-                  js.id = id; js.src = "https://weatherwidget.io/js/widget.min.js"; 
+                  js.id = id; 
+                  js.src = "https://weatherwidget.io/js/widget.min.js"; 
                   fjs.parentNode.insertBefore(js, fjs); 
                 } 
               }(document, "script", "weatherwidget-io-js");
@@ -79,60 +223,80 @@
       </div> <!-- end links -->
 
       <div id="links">
-        <div class="box">
+        <div class="box bg-color border-color">
           <!-- ~ $ cd ~/general -->
-          <h3><span class="magenta">~</span> <span class="blue">$</span> 
-            <span class="orange">cd</span> ~/<span class="green">media</span></h3>
-          <a href="https://www.youtube.com/">youtube</a>
-          <a href="https://www.goodfon.ru/">goodfon</a>
-          <a href="https://www.deviantart.com/">deviantart</a>
-          <a href="https://habrahabr.ru/">habrahabr</a>
-          <a href="http://droider.ru/">droider</a>
-          <a href="https://translate.google.com/?hl=ru#">translate</a>
-          <a href="http://www.wolframalpha.com/">wolframalpha</a>
+          <h3>
+            <span class="tilde-color">~</span> 
+            <span class="dollar-color">$</span> 
+            <span class="cd-color">cd</span>
+            <span class="tildeslash-color">~/</span>
+            <span class="title-color">media</span>
+          </h3>
+          <a class="text-color" href="https://www.youtube.com/">youtube</a>
+          <a class="text-color" href="https://www.goodfon.ru/">goodfon</a>
+          <a class="text-color" href="https://www.deviantart.com/">deviantart</a>
+          <a class="text-color" href="https://habrahabr.ru/">habrahabr</a>
+          <a class="text-color" href="http://droider.ru/">droider</a>
+          <a class="text-color" href="https://translate.google.com/?hl=ru#">translate</a>
+          <a class="text-color" href="http://www.wolframalpha.com/">wolframalpha</a>
         </div>
 
-        <div class="box">
-          <h3><span class="magenta">~</span> <span class="blue">$</span> 
-            <span class="orange">cd</span> ~/<span class="green">films</span></h3>
-          <a href="http://www.lostfilm.tv/">front page</a>
-          <a href="http://new-rutor.org/">rutor</a>
-          <a href="https://rutracker.org/forum/index.php">rutracker</a>
-          <a href="https://thepiratebay.se/">thepiratebay</a>
-          <a href="https://www.kinopoisk.ru/">kinopoisk</a>
-          <a href="http://www.imdb.com/">imdb</a>
-          <a href="https://myshows.me/">myshows</a>
+        <div class="box bg-color border-color">
+          <h3>
+            <span class="tilde-color">~</span> 
+            <span class="dollar-color">$</span> 
+            <span class="cd-color">cd</span>
+            <span class="tildeslash-color">~/</span>
+            <span class="title-color">media</span>
+          </h3>
+          <a class="text-color" href="http://www.lostfilm.tv/">front page</a>
+          <a class="text-color" href="http://new-rutor.org/">rutor</a>
+          <a class="text-color" href="https://rutracker.org/forum/index.php">rutracker</a>
+          <a class="text-color" href="https://thepiratebay.se/">thepiratebay</a>
+          <a class="text-color" href="https://www.kinopoisk.ru/">kinopoisk</a>
+          <a class="text-color" href="http://www.imdb.com/">imdb</a>
+          <a class="text-color" href="https://myshows.me/">myshows</a>
         </div>
 
-        <div class="box">
-          <h3><span class="magenta">~</span> <span class="blue">$</span> 
-            <span class="orange">cd</span> ~/<span class="green">geek</span></h3>
-          <a href="https://github.com/">github</a>
-          <a href="http://lurkmore.to/">lurkmore</a>
-          <a href="https://www.wikipedia.org/">wikipedia</a>
-          <a href="https://wiki.archlinux.org/">archlinux</a>
-          <a href="http://4pda.ru/forum/index.php?act=idx">4pda</a>
-          <a href="https://chtoes.li/">chtoes</a>
-          <a href="https://xkcd.ru/">xkcd</a>
-          <a href="http://distrowatch.com/">distrowatch</a>
+        <div class="box bg-color border-color">
+          <h3>
+            <span class="tilde-color">~</span> 
+            <span class="dollar-color">$</span> 
+            <span class="cd-color">cd</span>
+            <span class="tildeslash-color">~/</span>
+            <span class="title-color">media</span>
+          </h3>
+          <a class="text-color" href="https://github.com/">github</a>
+          <a class="text-color" href="http://lurkmore.to/">lurkmore</a>
+          <a class="text-color" href="https://www.wikipedia.org/">wikipedia</a>
+          <a class="text-color" href="https://wiki.archlinux.org/">archlinux</a>
+          <a class="text-color" href="http://4pda.ru/forum/index.php?act=idx">4pda</a>
+          <a class="text-color" href="https://chtoes.li/">chtoes</a>
+          <a class="text-color" href="https://xkcd.ru/">xkcd</a>
+          <a class="text-color" href="http://distrowatch.com/">distrowatch</a>
         </div>
-        <div class="box">
-          <h3><span class="magenta">~</span> <span class="blue">$</span> 
-            <span class="orange">cd</span> ~/<span class="green">4chan</span></h3>
-          <a href="http://boards.4chan.org/wg/catalog">/wg/</a>
-          <a href="http://boards.4chan.org/w/catalog">/w/</a>
-          <a href="http://boards.4chan.org/g/catalog">/g/</a>
-          <a href="http://boards.4chan.org/b/catalog">/b/</a>
+        <div class="box bg-color border-color">
+          <h3>
+            <span class="tilde-color">~</span> 
+            <span class="dollar-color">$</span> 
+            <span class="cd-color">cd</span>
+            <span class="tildeslash-color">~/</span>
+            <span class="title-color">media</span>
+          </h3>
+          <a class="text-color" href="http://boards.4chan.org/wg/catalog">/wg/</a>
+          <a class="text-color" href="http://boards.4chan.org/w/catalog">/w/</a>
+          <a class="text-color" href="http://boards.4chan.org/g/catalog">/g/</a>
+          <a class="text-color" href="http://boards.4chan.org/b/catalog">/b/</a>
         </div>
       </div> <!-- end links -->
 
       <div id="links">
-        <div id="oneout_inner" class="box">
+        <div id="oneout_inner" class="box bg-color border-color">
 					<div id="note-pad">
-						<div id="note" contenteditable="true" onkeyup="storeUsernote();"></div>
+						<div class="note text-color" id="note" contenteditable="true" onkeyup="storeUsernote();"></div>
 					</div>
 					<center>
-						<a class="clear" href='' onclick='clearLocal();'>Clear</a>
+						<a class="text-color" href='' onclick='clearLocal();'>Clear</a>
 					</center>
 				</div>
       </div> <!-- end links -->

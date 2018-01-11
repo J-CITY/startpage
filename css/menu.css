@@ -1,0 +1,149 @@
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    -webkit-box-shadow: 1px 1px 10px 0px #000;
+    -moz-box-shadow: 1px 1px 10px 0px #000;
+         box-shadow: 1px 1px 10px 0px #000;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav .separator {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    display: block;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+.sidenav label {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 22px;
+    transition: 0.3s;
+}
+
+.menu {
+    font-size:30px;
+    cursor:pointer;
+    z-index: 100;
+    position: fixed;
+    transition: 0.5s;
+}
+
+.menu-element {
+    height: 40px;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+.color {
+    width: 30%;
+    height: 30px;
+    border-radius: 0%;
+    position: absolute;
+    right: 0px;
+    margin-right: 5px;
+    border: 0px;
+    text-align: center;
+    -webkit-box-shadow: 1px 1px 10px 0px #000;
+    -moz-box-shadow: 1px 1px 10px 0px #000;
+         box-shadow: 1px 1px 10px 0px #000;
+}
+/* The switch - the box around the slider */
+.switch {
+    position: absolute;
+    width: 14%;
+    height: 14px;
+    right: 0px;
+    margin-right: 5px;
+}
+  
+/* Hide default HTML checkbox */
+.switch input {display:none;}
+  
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 0%;
+    right: 0;
+    -webkit-box-shadow: 1px 1px 10px 0px #000;
+    -moz-box-shadow: 1px 1px 10px 0px #000;
+         box-shadow: 1px 1px 10px 0px #000;
+}
+  
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 22px;
+    width: 22px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+    right: 0px;
+    margin-right: 5px;
+}
+  
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(48px);
+    -ms-transform: translateX(48px);
+    transform: translateX(48px);
+}
+
+.inputname {
+    background-color: #2196F3;
+    color: white;
+    position: absolute;
+    width: 30%;
+    height: 30px;
+    padding: 2px 4px;
+    box-sizing: border-box;
+    border: none;
+    right: 0px;
+    margin-right: 5px;
+    -webkit-box-shadow: 1px 1px 10px 0px #000;
+    -moz-box-shadow: 1px 1px 10px 0px #000;
+         box-shadow: 1px 1px 10px 0px #000;
+}

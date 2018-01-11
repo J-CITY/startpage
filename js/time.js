@@ -19,8 +19,11 @@ function format12(date) {
     hours = checkTime(hours);
     minutes = checkTime(minutes);
     seconds = checkTime(seconds);
+    let preference = localStorage.getItem('secondscb');
     //var strTime = hours + ':' + minutes + ':' + seconds + ' ' + ampm;
-    var strTime = hours + ':' + minutes + ' ' + ampm;
+    var strTime = hours + ':' + minutes + 
+        (preference === 'true' ? (':' + seconds) : '') + 
+        ' ' + ampm;
     return strTime;
 }
 
@@ -32,8 +35,10 @@ function format24(date) {
     hours = checkTime(hours);
     minutes = checkTime(minutes);
     seconds = checkTime(seconds);
+    let preference = localStorage.getItem('secondscb');
     //var strTime = hours + ":" + minutes + ":" + seconds;
-    var strTime = hours + ":" + minutes;
+    var strTime = hours + ":" + minutes +
+        (preference === 'true' ? ':' + seconds : '');
     return strTime;
 }
 
