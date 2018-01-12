@@ -19,6 +19,7 @@
     <script src="js/note.js"></script>
     <script type="text/javascript" src="js/search.js"></script>
     <script src="js/settings.js"></script>
+    <script src="js/bigSearch.js"></script>
     <!-- menu -->
     <link rel="stylesheet" href="css/menu.css">
     <script src="js/menu.js"></script>
@@ -26,9 +27,22 @@
     <script src="lib/jscolor.js"></script>
   </head>
 
-  <body onload="startTime(); setWallpaper(); getUsernote(); getAllSettings();" class="wallpaper-color">
+  <body onload="startTime(); setWallpaper(); getUsernote(); getAllSettings();" 
+    class="wallpaper-color">
 
     <div id="background-image" class="background-image" onclick="setWallpaper()"></div>
+    <div id="big-search-div" class="big-search-div">
+      <input type="text" 
+          id="big-search" 
+          class="big-search input-color"
+          autocapitalize="off" 
+          autocomplete="off" 
+          autocorrect="off" 
+          spellcheck="false" 
+          placeholder="" 
+          onkeypress="return search(event)">
+      </input>
+    </div>
     <div id="change-background-image" class="change-background-image" onclick="setWallpaper()"></div>
     <!-- menu -->
     <div id="sidenav" class="sidenav bg-color text-color">
@@ -157,7 +171,7 @@
       <a class="separator text-color" href="#" onclick="clearSettings()">Clear</a>
     </div>
     
-    <span id="menubtn" class="menu text-color" onclick="openMenu()"> &#9776; </span>
+    <a id="menubtn" class="menu text-color" onclick="openMenu()"> &#9776; </a>
     <!-- end menu -->
 
     <div id="container">
@@ -230,7 +244,7 @@
             <span class="dollar-color">$</span> 
             <span class="cd-color">cd</span>
             <span class="tildeslash-color">~/</span>
-            <span class="title-color">media</span>
+            <span class="title-color">news</span>
           </h3>
           <a class="text-color" href="https://www.youtube.com/">youtube</a>
           <a class="text-color" href="https://www.goodfon.ru/">goodfon</a>
@@ -256,6 +270,7 @@
           <a class="text-color" href="https://www.kinopoisk.ru/">kinopoisk</a>
           <a class="text-color" href="http://www.imdb.com/">imdb</a>
           <a class="text-color" href="https://myshows.me/">myshows</a>
+          <a class="text-color" href="https://zvooq.com/">zvooq</a>
         </div>
 
         <div class="box bg-color border-color">
@@ -264,7 +279,7 @@
             <span class="dollar-color">$</span> 
             <span class="cd-color">cd</span>
             <span class="tildeslash-color">~/</span>
-            <span class="title-color">media</span>
+            <span class="title-color">geek</span>
           </h3>
           <a class="text-color" href="https://github.com/">github</a>
           <a class="text-color" href="http://lurkmore.to/">lurkmore</a>
@@ -281,12 +296,30 @@
             <span class="dollar-color">$</span> 
             <span class="cd-color">cd</span>
             <span class="tildeslash-color">~/</span>
-            <span class="title-color">media</span>
+            <span class="title-color">4chan</span>
           </h3>
           <a class="text-color" href="http://boards.4chan.org/wg/catalog">/wg/</a>
           <a class="text-color" href="http://boards.4chan.org/w/catalog">/w/</a>
           <a class="text-color" href="http://boards.4chan.org/g/catalog">/g/</a>
           <a class="text-color" href="http://boards.4chan.org/b/catalog">/b/</a>
+        </div>
+        <div class="box bg-color border-color">
+          <h3>
+            <span class="tilde-color">~</span> 
+            <span class="dollar-color">$</span> 
+            <span class="cd-color">cd</span>
+            <span class="tildeslash-color">~/</span>
+            <span class="title-color">reddit</span>
+          </h3>
+          <a class="text-color" href="https://www.reddit.com/r/unixporn/">/r/unixporn/</a>
+          <a class="text-color" href="https://www.reddit.com/r/TOR/">/r/TOR/</a>
+          <a class="text-color" href="https://www.reddit.com/r/technology/">/r/technology/</a>
+          <a class="text-color" href="https://www.reddit.com/r/startpages/">/r/startpages/</a>
+          <a class="text-color" href="https://www.reddit.com/r/space/">/r/space/</a>
+          <a class="text-color" href="https://www.reddit.com/r/math/">/r/math/</a>
+          <a class="text-color" href="https://www.reddit.com/r/programming/">/r/programming/</a>
+          <a class="text-color" href="https://www.reddit.com/r/archlinux/">/r/archlinux/</a>
+          <a class="text-color" href="https://www.reddit.com/r/analog/">/r/analog/</a>
         </div>
       </div> <!-- end links -->
 

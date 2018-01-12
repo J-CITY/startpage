@@ -32,16 +32,39 @@ a:hover { color: #dc322f; }
 
 
 .background-image {
-    position: absolute;
+    position: fixed;
+    overflow: hidden;
     z-index: -1;
     display: block;
-    width: 100%;
-    height: 100%;
     filter: blur(5px);
     overflow: hidden;
+    top: -5px;
+    left: -5px;
+    width:  110%;
+    height: 110%;
     visibility: visible;
+    background-size: cover;
+    box-shadow:0 0 0 0px rgba(0, 0, 0, 0.5) inset;
 }
 
+.big-search-div {
+  border: 0px;
+}
+
+.big-search {
+  top: 30%;
+  position: fixed;
+  overflow: hidden;
+  z-index: -2;
+  width: 100%;
+  height: 30%;
+  border: 0px;
+  font-family: Segoe UI Light;
+  font-size: 96px;
+  text-align: center;
+  visibility: hidden;
+  outline:none;
+}
 
 .change-background-image {
     height: 100%;
@@ -104,7 +127,7 @@ a:hover { color: #dc322f; }
   right: 0;
   margin: 0 auto;
   padding: 0 20px;
-  width: 700px;
+  width: 800px;
   height: auto;
   z-index: 50;
 }
