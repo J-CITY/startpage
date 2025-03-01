@@ -1,5 +1,4 @@
-# startpage
-start page
+# Beautiful startpage with customization
 
 ![alt text](https://github.com/J-CITY/startpage/blob/master/scr.PNG)
 
